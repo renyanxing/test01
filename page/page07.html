@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <p>{{message|filterA(arg1,arg2)}}</p>
+            <script>
+                new Vue({
+                    el:'#app',
+                    data:{
+                        message:'renyanxing',
+                        arg1:'meal',
+                        arg2:'femeal'
+                    },
+                    filters:{
+                        filterA:function(value,value1,value2){
+                            if(value=='renyanxing') return value1;
+                            if(value=='linyingying')return value2;
+                        }
+                    }
+
+                })
+            </script>
+        <!-- <p>{{message|func}}</p>
+        <script>
+            new Vue({
+                el:'#app',
+                data:{
+                    message:'renyanxing'
+                },
+                filters:{
+                    func:function(value){
+                        if (!value) return ''
+                        value = value.toString()
+                        return value.charAt(0).toUpperCase() + value.slice(1)
+                    }
+                }
+            })
+        </script> -->
+
+
+        <!-- <p>{{message|func1|func}}</p>
+        <script>
+                new Vue({
+                    el:'#app',
+                    data:{
+                        message:'renyanxing'
+                    },
+                    filters:{
+                        func:function(value){
+                            if(value=='renyanxing') return '任彦行';
+                            if(value=='renyanxing&linyingying') return '任彦行爱林莹莹';
+                        },
+                        func1:function(value){
+                            if(value=='renyanxing') return'renyanxing';
+                            if(value=='linyingying') return 'renyanxing&linyingying';
+                        }
+                    }
+                })
+            </script> -->
+            
+    </div>
+    
+</body>
+
+</html>
